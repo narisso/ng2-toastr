@@ -18,7 +18,7 @@ import {Observable} from 'rxjs/Observable';
         </div> 
         <div *ngIf="toast.title" class="{{toast.config.titleClass || titleClass}}">{{toast.title}}</div>
         <div [ngSwitch]="toast.config.enableHTML">
-          <span *ngSwitchCase="true" class="{{toast.config.messageClass || messageClass}}" [innerHTML]="sanitizer.bypassSecurityTrustHtml(toast.message)"></span>
+          <span *ngSwitchCase="true" class="{{toast.config.messageClass || messageClass}}" [innerHTML]="toast.message"></span>
           <span *ngSwitchDefault class="{{toast.config.messageClass || messageClass}}">{{toast.message}}</span>
         </div>             
       </div>
